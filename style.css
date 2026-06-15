@@ -1,0 +1,64 @@
+:root {
+    --background-color: #0D1B2A;
+    --accent-color: #B8975A;
+    --primary-text: #F5F0EB;
+    --secondary-text: #6B7280;
+    --mid-text: #D1C9BF;
+    --body-font: 'Montserrat', sans-serif;
+    --head-font: 'Cormorant Garamond', serif;
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--body-font);
+    background-color: var(--background-color);
+    color: var(--primary-text);
+}
+
+.navbar {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    border-bottom: 1px solid rgba(184, 151, 90, 0.15);
+    background: rgba(13, 27, 42, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 1rem;
+    justify-content: space-between;
+}
+
+.leftnav h1{
+    font-family: var(--head-font);
+    color: var(--accent-color);
+    font-weight: 200;
+    letter-spacing: 0.2rem;
+    font-size: 1.4rem;
+}
+
+.actionLinks {
+    display: none;
+}
+
+.rightnav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hamLinks {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
