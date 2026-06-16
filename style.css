@@ -6,7 +6,6 @@
     --mid-text: #D1C9BF;
     --body-font: 'Montserrat', sans-serif;
     --head-font: 'Cormorant Garamond', serif;
-
 }
 
 * {
@@ -25,30 +24,35 @@ body {
     color: var(--primary-text);
 }
 
+/* 
+---------------
+    Navbar 
+---------------
+*/
+
 .navbar {
     position: fixed;
     left: 0;
     right: 0;
     top: 0;
     z-index: 1000;
+
     display: flex;
-    border-bottom: 1px solid rgba(184, 151, 90, 0.15);
+    justify-content: space-between;
+
+    border: 1px solid rgba(184, 151, 90, 0.15);
     background: rgba(13, 27, 42, 0.95);
     backdrop-filter: blur(10px);
+
     padding: 1rem;
-    justify-content: space-between;
 }
 
-.leftnav h1{
+.leftnav h1 {
     font-family: var(--head-font);
     color: var(--accent-color);
     font-weight: 200;
     letter-spacing: 0.2rem;
     font-size: 1.4rem;
-}
-
-.actionLinks {
-    display: none;
 }
 
 .rightnav {
@@ -57,8 +61,88 @@ body {
     align-items: center;
 }
 
-.hamLinks {
+.actionLinks {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: 0.5rem 1rem;
+    gap: 0.5rem;
+
+    background-color: var(--background-color);
+    border-bottom: 1px solid rgba(184, 151, 90, 0.15);
+
+    /* hidden state */
+    opacity: 0;
+    transform: translateY(-13px);
+    pointer-events: none;
+
+    /* Animation */
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.actionLinks.show {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: all;   
+}
+
+.actionLinks a {
+    padding: 0.5rem;
+    color: var(--primary-text);
+    text-decoration: none
+}
+
+.hamLink {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.hamLink i {
+    color: var(--primary-text);
+}
+
+/* 
+---------------------
+    Hero Section 
+---------------------
+*/
+
+.hero {
+    text-align: center;
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background: linear-gradient(160deg, #0D1B2A 0%, #111827 50%, #0D1B2A 100%);
+}
+
+.hero-tagline p{
+    text-transform: uppercase;
+    color: var(--accent-color);
+    font-size: 0.65rem;
+    letter-spacing: 0.35rem;
+    margin-bottom: 1rem;
+}
+
+.hero-main h1 {
+    font-family: var(--head-font);
+    font-style: italic;
+    font-size: clamp(3rem, 7vw, 6.5rem);
+    font-weight: 300;
+}
+
+.gold {
+    color: var(--accent-color);
+    font-style: normal;
 }
