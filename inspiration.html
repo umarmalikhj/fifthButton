@@ -1,0 +1,1049 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fifth Button — Luxury Menswear</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap"
+        rel="stylesheet" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --gold: #B8975A;
+            --navy: #0D1B2A;
+            --charcoal: #1C1C1C;
+            --offwhite: #F5F0EB;
+            --white: #FFFFFF;
+            --gray: #6B7280;
+            --lightgray: #D1C9BF;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #0D1B2A;
+            color: #F5F0EB;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 300;
+            overflow-x: hidden;
+        }
+
+        /* NAV */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            padding: 1.5rem 4rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(184, 151, 90, 0.15);
+            background: rgba(13, 27, 42, 0.95);
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.4rem;
+            letter-spacing: 0.2em;
+            color: #B8975A;
+            font-weight: 400;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #D1C9BF;
+            text-decoration: none;
+            font-size: 0.7rem;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #B8975A;
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 8rem 2rem 4rem;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(160deg, #0D1B2A 0%, #111827 50%, #0D1B2A 100%);
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse 60% 40% at 50% 40%, rgba(184, 151, 90, 0.06) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero-eyebrow {
+            font-size: 0.65rem;
+            letter-spacing: 0.35em;
+            text-transform: uppercase;
+            color: #B8975A;
+            margin-bottom: 2rem;
+        }
+
+        .hero h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(3rem, 7vw, 6.5rem);
+            font-weight: 300;
+            line-height: 1.05;
+            letter-spacing: 0.02em;
+            color: #F5F0EB;
+            max-width: 900px;
+            font-style: italic;
+        }
+
+        .hero h1 span {
+            color: #B8975A;
+            font-style: normal;
+        }
+
+        .hero-sub {
+            margin-top: 2rem;
+            font-size: 0.75rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: #6B7280;
+            max-width: 400px;
+            line-height: 2;
+        }
+
+        .hero-cta {
+            margin-top: 3.5rem;
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .btn-primary {
+            background: #B8975A;
+            color: #0D1B2A;
+            padding: 1rem 2.5rem;
+            font-size: 0.7rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            border: none;
+            cursor: pointer;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+
+        .btn-primary:hover {
+            background: #d4b07a;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #F5F0EB;
+            padding: 1rem 2.5rem;
+            font-size: 0.7rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            border: 1px solid rgba(245, 240, 235, 0.3);
+            cursor: pointer;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 400;
+            transition: all 0.3s;
+        }
+
+        .btn-secondary:hover {
+            border-color: #B8975A;
+            color: #B8975A;
+        }
+
+        .hero-line {
+            width: 1px;
+            height: 80px;
+            background: linear-gradient(to bottom, transparent, #B8975A, transparent);
+            margin: 3.5rem auto 0;
+        }
+
+        /* SECTION COMMONS */
+        section {
+            padding: 7rem 4rem;
+        }
+
+        .section-label {
+            font-size: 0.6rem;
+            letter-spacing: 0.35em;
+            text-transform: uppercase;
+            color: #B8975A;
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            font-weight: 300;
+            line-height: 1.1;
+            color: #F5F0EB;
+        }
+
+        .section-title em {
+            color: #B8975A;
+            font-style: italic;
+        }
+
+        .divider {
+            width: 60px;
+            height: 1px;
+            background: #B8975A;
+            margin: 2rem 0;
+        }
+
+        /* PHILOSOPHY */
+        .philosophy {
+            background: #111827;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6rem;
+            align-items: center;
+        }
+
+        .philosophy-stat {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .stat-item {}
+
+        .stat-num {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3rem;
+            color: #B8975A;
+            font-weight: 300;
+        }
+
+        .stat-label {
+            font-size: 0.65rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: #6B7280;
+            margin-top: 0.25rem;
+        }
+
+        .philosophy-quote {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.7rem;
+            font-style: italic;
+            color: #D1C9BF;
+            line-height: 1.5;
+            border-left: 1px solid #B8975A;
+            padding-left: 2.5rem;
+        }
+
+        .philosophy p {
+            font-size: 0.85rem;
+            line-height: 2;
+            color: #9CA3AF;
+            margin-top: 1.5rem;
+        }
+
+        /* COLLECTIONS */
+        .collections {
+            background: #0D1B2A;
+        }
+
+        .collections-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5px;
+            margin-top: 4rem;
+            background: #B8975A;
+        }
+
+        .collection-card {
+            background: #0D1B2A;
+            padding: 2.5rem 2rem;
+            cursor: pointer;
+            transition: background 0.4s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .collection-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(184, 151, 90, 0.04);
+            opacity: 0;
+            transition: opacity 0.4s;
+        }
+
+        .collection-card:hover::before {
+            opacity: 1;
+        }
+
+        .collection-card:hover .card-arrow {
+            transform: translateX(6px);
+        }
+
+        .card-num {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 0.85rem;
+            color: #B8975A;
+            letter-spacing: 0.15em;
+            margin-bottom: 2rem;
+        }
+
+        .card-img {
+            width: 100%;
+            aspect-ratio: 3/4;
+            background: #111827;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .card-img svg {
+            opacity: 0.2;
+        }
+
+        .card-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.25rem;
+            color: #F5F0EB;
+            font-weight: 300;
+        }
+
+        .card-desc {
+            font-size: 0.7rem;
+            letter-spacing: 0.1em;
+            color: #6B7280;
+            margin-top: 0.5rem;
+            line-height: 1.8;
+            text-transform: uppercase;
+        }
+
+        .card-arrow {
+            display: inline-block;
+            margin-top: 1.5rem;
+            font-size: 0.65rem;
+            letter-spacing: 0.2em;
+            color: #B8975A;
+            transition: transform 0.3s;
+        }
+
+        /* PRESENCE BUILDER */
+        .presence {
+            background: #111827;
+        }
+
+        .presence-inner {
+            max-width: 760px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .presence-inner .section-title {
+            margin-bottom: 0.5rem;
+        }
+
+        .presence-sub {
+            font-size: 0.75rem;
+            letter-spacing: 0.15em;
+            color: #6B7280;
+            text-transform: uppercase;
+            margin-bottom: 3rem;
+        }
+
+        .pb-step {
+            display: none;
+        }
+
+        .pb-step.active {
+            display: block;
+        }
+
+        .pb-question {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.6rem;
+            font-style: italic;
+            color: #D1C9BF;
+            margin-bottom: 2.5rem;
+            line-height: 1.4;
+        }
+
+        .pb-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+
+        .pb-option {
+            background: transparent;
+            border: 1px solid rgba(184, 151, 90, 0.3);
+            color: #D1C9BF;
+            padding: 0.9rem 2rem;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.7rem;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .pb-option:hover,
+        .pb-option.selected {
+            background: rgba(184, 151, 90, 0.12);
+            border-color: #B8975A;
+            color: #B8975A;
+        }
+
+        .pb-progress {
+            display: flex;
+            gap: 0.5rem;
+            justify-content: center;
+            margin-bottom: 3rem;
+        }
+
+        .pb-dot {
+            width: 24px;
+            height: 1px;
+            background: rgba(184, 151, 90, 0.25);
+            transition: background 0.3s;
+        }
+
+        .pb-dot.done {
+            background: #B8975A;
+        }
+
+        .pb-result {
+            display: none;
+            text-align: center;
+        }
+
+        .pb-result.show {
+            display: block;
+        }
+
+        .result-badge {
+            display: inline-block;
+            border: 1px solid #B8975A;
+            padding: 0.5rem 1.5rem;
+            font-size: 0.6rem;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: #B8975A;
+            margin-bottom: 2rem;
+        }
+
+        .result-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.5rem;
+            font-style: italic;
+            color: #F5F0EB;
+            margin-bottom: 1rem;
+        }
+
+        .result-desc {
+            font-size: 0.8rem;
+            color: #9CA3AF;
+            line-height: 2;
+            max-width: 500px;
+            margin: 0 auto 2rem;
+        }
+
+        .result-items {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 2.5rem 0;
+        }
+
+        .result-item {
+            text-align: center;
+        }
+
+        .result-item-label {
+            font-size: 0.6rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: #6B7280;
+            margin-bottom: 0.5rem;
+        }
+
+        .result-item-val {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem;
+            color: #B8975A;
+        }
+
+        .btn-reset {
+            background: transparent;
+            border: none;
+            color: #6B7280;
+            font-size: 0.65rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            cursor: pointer;
+            font-family: 'Montserrat', sans-serif;
+            margin-top: 1rem;
+            transition: color 0.3s;
+        }
+
+        .btn-reset:hover {
+            color: #B8975A;
+        }
+
+        /* TESTIMONIALS */
+        .testimonials {
+            background: #0D1B2A;
+        }
+
+        .testimonials-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 4rem;
+        }
+
+        .t-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1px;
+            background: rgba(184, 151, 90, 0.15);
+        }
+
+        .t-card {
+            background: #0D1B2A;
+            padding: 2.5rem;
+        }
+
+        .t-quote {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            font-style: italic;
+            color: #D1C9BF;
+            line-height: 1.55;
+            margin-bottom: 1.5rem;
+        }
+
+        .t-meta {
+            font-size: 0.65rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: #6B7280;
+        }
+
+        .t-meta strong {
+            color: #B8975A;
+            display: block;
+            margin-bottom: 0.25rem;
+            font-weight: 500;
+        }
+
+        /* CONTACT */
+        .contact {
+            background: #111827;
+            text-align: center;
+        }
+
+        .contact-inner {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-form {
+            margin-top: 3.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .contact-form input,
+        .contact-form select,
+        .contact-form textarea {
+            background: rgba(245, 240, 235, 0.04);
+            border: 1px solid rgba(184, 151, 90, 0.2);
+            color: #F5F0EB;
+            padding: 1rem 1.25rem;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.8rem;
+            outline: none;
+            transition: border-color 0.3s;
+            resize: none;
+        }
+
+        .contact-form input::placeholder,
+        .contact-form textarea::placeholder {
+            color: #4B5563;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            border-color: #B8975A;
+        }
+
+        .contact-form select option {
+            background: #111827;
+        }
+
+        .contact-submit {
+            background: #B8975A;
+            color: #0D1B2A;
+            padding: 1.1rem;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.7rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            font-weight: 500;
+            border: none;
+            cursor: pointer;
+            transition: background 0.3s;
+            margin-top: 0.5rem;
+        }
+
+        .contact-submit:hover {
+            background: #d4b07a;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #0A1520;
+            padding: 3rem 4rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid rgba(184, 151, 90, 0.12);
+        }
+
+        .footer-logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem;
+            letter-spacing: 0.2em;
+            color: #B8975A;
+        }
+
+        .footer-copy {
+            font-size: 0.6rem;
+            letter-spacing: 0.15em;
+            color: #4B5563;
+            text-transform: uppercase;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .footer-links a {
+            font-size: 0.6rem;
+            letter-spacing: 0.15em;
+            color: #4B5563;
+            text-decoration: none;
+            text-transform: uppercase;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: #B8975A;
+        }
+
+        @media(max-width:768px) {
+            nav {
+                padding: 1.25rem 1.5rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            section {
+                padding: 5rem 1.5rem;
+            }
+
+            .philosophy {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .collections-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .t-grid {
+                grid-template-columns: 1fr;
+            }
+
+            footer {
+                flex-direction: column;
+                gap: 1.5rem;
+                text-align: center;
+            }
+
+            .footer-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <div class="nav-logo">Fifth Button</div>
+        <ul class="nav-links">
+            <li><a href="#collections">Collections</a></li>
+            <li><a href="#philosophy">Philosophy</a></li>
+            <li><a href="#presence">Presence Builder</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <p class="hero-eyebrow">Luxury Menswear · Est. 2024</p>
+        <h1>The Room Notices<br />Before <span>You Speak.</span></h1>
+        <p class="hero-sub">We don't dress men.<br />We build presence.</p>
+        <div class="hero-cta">
+            <button class="btn-primary"
+                onclick="document.getElementById('presence').scrollIntoView({behavior:'smooth'})">Build Your
+                Presence</button>
+            <button class="btn-secondary"
+                onclick="document.getElementById('collections').scrollIntoView({behavior:'smooth'})">View
+                Collections</button>
+        </div>
+        <div class="hero-line"></div>
+    </section>
+
+    <!-- PHILOSOPHY -->
+    <section class="philosophy" id="philosophy">
+        <div>
+            <p class="section-label">Our Belief</p>
+            <h2 class="section-title">Confidence is not worn.<br /><em>It is felt.</em></h2>
+            <div class="divider"></div>
+            <p>Every garment we create is built around a moment — not a measurement. The interview that opens a door.
+                The meeting that closes a deal. The day you stand at the altar.</p>
+            <p style="margin-top:1rem;">We obsess over presence, not product. Because people remember how you made them
+                feel before they remember what you wore.</p>
+            <div class="philosophy-stat">
+                <div class="stat-item">
+                    <div class="stat-num">8+</div>
+                    <div class="stat-label">Years of craft</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-num">4K+</div>
+                    <div class="stat-label">Moments created</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-num">12</div>
+                    <div class="stat-label">Master tailors</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-num">100%</div>
+                    <div class="stat-label">Custom fitted</div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <blockquote class="philosophy-quote">People remember how you made them feel before they remember what you
+                said.<br /><br />Appearance is part of that equation.</blockquote>
+            <p style="margin-top:2rem;font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:#B8975A;">—
+                Alexander Reeves, Founder</p>
+        </div>
+    </section>
+
+    <!-- COLLECTIONS -->
+    <section class="collections" id="collections">
+        <p class="section-label">Featured Collections</p>
+        <h2 class="section-title">Dressed for the <em>Moment</em></h2>
+        <div class="collections-grid">
+            <div class="collection-card">
+                <div class="card-num">01</div>
+                <div class="card-img">
+                    <svg width="60" height="80" viewBox="0 0 60 80" fill="none">
+                        <rect x="20" y="5" width="20" height="10" rx="2" fill="#B8975A" />
+                        <path d="M15 15 L5 25 L10 75 L50 75 L55 25 L45 15" fill="#B8975A" />
+                        <path d="M20 15 L15 30 L30 35 L45 30 L40 15" fill="#8a6f40" />
+                    </svg>
+                </div>
+                <div class="card-name">The Interview</div>
+                <div class="card-desc">Sharp lines.<br />Unshakeable authority.</div>
+                <div class="card-arrow">Explore →</div>
+            </div>
+            <div class="collection-card">
+                <div class="card-num">02</div>
+                <div class="card-img">
+                    <svg width="60" height="80" viewBox="0 0 60 80" fill="none">
+                        <rect x="20" y="5" width="20" height="10" rx="2" fill="#B8975A" />
+                        <path d="M15 15 L5 25 L10 75 L50 75 L55 25 L45 15" fill="#B8975A" />
+                        <path d="M20 15 L15 30 L30 35 L45 30 L40 15" fill="#8a6f40" />
+                    </svg>
+                </div>
+                <div class="card-name">The Boardroom</div>
+                <div class="card-desc">Command every<br />room you enter.</div>
+                <div class="card-arrow">Explore →</div>
+            </div>
+            <div class="collection-card">
+                <div class="card-num">03</div>
+                <div class="card-img">
+                    <svg width="60" height="80" viewBox="0 0 60 80" fill="none">
+                        <rect x="20" y="5" width="20" height="10" rx="2" fill="#B8975A" />
+                        <path d="M15 15 L5 25 L10 75 L50 75 L55 25 L45 15" fill="#B8975A" />
+                        <path d="M20 15 L15 30 L30 35 L45 30 L40 15" fill="#8a6f40" />
+                    </svg>
+                </div>
+                <div class="card-name">The Wedding</div>
+                <div class="card-desc">The day she<br />remembers forever.</div>
+                <div class="card-arrow">Explore →</div>
+            </div>
+            <div class="collection-card">
+                <div class="card-num">04</div>
+                <div class="card-img">
+                    <svg width="60" height="80" viewBox="0 0 60 80" fill="none">
+                        <rect x="20" y="5" width="20" height="10" rx="2" fill="#B8975A" />
+                        <path d="M15 15 L5 25 L10 75 L50 75 L55 25 L45 15" fill="#B8975A" />
+                        <path d="M20 15 L15 30 L30 35 L45 30 L40 15" fill="#8a6f40" />
+                    </svg>
+                </div>
+                <div class="card-name">The Evening</div>
+                <div class="card-desc">For nights that<br />define decades.</div>
+                <div class="card-arrow">Explore →</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRESENCE BUILDER -->
+    <section class="presence" id="presence">
+        <div class="presence-inner">
+            <p class="section-label">Exclusive Feature</p>
+            <h2 class="section-title">Presence Builder<span style="color:#B8975A;">™</span></h2>
+            <p class="presence-sub">Answer three questions. Receive your complete presence profile.</p>
+
+            <div class="pb-progress">
+                <div class="pb-dot done" id="dot-0"></div>
+                <div class="pb-dot" id="dot-1"></div>
+                <div class="pb-dot" id="dot-2"></div>
+            </div>
+
+            <div class="pb-step active" id="step-0">
+                <p class="pb-question">Where are you going?</p>
+                <div class="pb-options">
+                    <button class="pb-option" onclick="selectOption(0,'Interview')">Interview</button>
+                    <button class="pb-option" onclick="selectOption(0,'Wedding')">Wedding</button>
+                    <button class="pb-option" onclick="selectOption(0,'Board Meeting')">Board Meeting</button>
+                    <button class="pb-option" onclick="selectOption(0,'Networking Event')">Networking Event</button>
+                </div>
+            </div>
+
+            <div class="pb-step" id="step-1">
+                <p class="pb-question">What impression do you want to make?</p>
+                <div class="pb-options">
+                    <button class="pb-option" onclick="selectOption(1,'Confidence')">Confidence</button>
+                    <button class="pb-option" onclick="selectOption(1,'Authority')">Authority</button>
+                    <button class="pb-option" onclick="selectOption(1,'Trust')">Trust</button>
+                    <button class="pb-option" onclick="selectOption(1,'Elegance')">Elegance</button>
+                </div>
+            </div>
+
+            <div class="pb-step" id="step-2">
+                <p class="pb-question">How would you describe yourself?</p>
+                <div class="pb-options">
+                    <button class="pb-option" onclick="selectOption(2,'Student')">Student</button>
+                    <button class="pb-option" onclick="selectOption(2,'Professional')">Professional</button>
+                    <button class="pb-option" onclick="selectOption(2,'Executive')">Executive</button>
+                </div>
+            </div>
+
+            <div class="pb-result" id="pb-result">
+                <div class="result-badge">Your Presence Profile</div>
+                <div class="result-title" id="result-title">The Rising Authority</div>
+                <div class="result-desc" id="result-desc">Loading your profile...</div>
+                <div class="result-items">
+                    <div class="result-item">
+                        <div class="result-item-label">Collection</div>
+                        <div class="result-item-val" id="res-collection">—</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-item-label">Silhouette</div>
+                        <div class="result-item-val" id="res-silhouette">—</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-item-label">Signature Colour</div>
+                        <div class="result-item-val" id="res-colour">—</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-item-label">Occasion</div>
+                        <div class="result-item-val" id="res-occasion">—</div>
+                    </div>
+                </div>
+                <button class="btn-primary" style="margin-top:1rem;"
+                    onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Book a
+                    Consultation</button>
+                <br />
+                <button class="btn-reset" onclick="resetBuilder()">Start Over</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="testimonials" id="testimonials">
+        <div class="testimonials-header">
+            <div>
+                <p class="section-label">Client Stories</p>
+                <h2 class="section-title">Moments That <em>Mattered</em></h2>
+            </div>
+        </div>
+        <div class="t-grid">
+            <div class="t-card">
+                <p class="t-quote">"I walked into that boardroom and closed a £2M deal. I don't think I would have
+                    carried myself the same way without that suit."</p>
+                <div class="t-meta"><strong>James Whitfield</strong>Partner, McKinsey & Co.</div>
+            </div>
+            <div class="t-card">
+                <p class="t-quote">"Landed my first management role. The interviewer said I had a presence they couldn't
+                    ignore. I knew exactly why."</p>
+                <div class="t-meta"><strong>Marcus Chen</strong>Operations Manager, Goldman Sachs</div>
+            </div>
+            <div class="t-card">
+                <p class="t-quote">"My wedding day was perfect. She cried when she saw me. That was Fifth Button."</p>
+                <div class="t-meta"><strong>Daniel Osei</strong>Groom, October 2024</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact" id="contact">
+        <div class="contact-inner">
+            <p class="section-label">Private Consultation</p>
+            <h2 class="section-title">Begin Your <em>Journey</em></h2>
+            <div class="divider" style="margin:2rem auto;"></div>
+            <p style="font-size:0.78rem;color:#6B7280;line-height:2;letter-spacing:0.05em;">Reserved for those serious
+                about their presence.<br />We respond within 24 hours.</p>
+            <div class="contact-form">
+                <input type="text" placeholder="Full Name" />
+                <input type="email" placeholder="Email Address" />
+                <select>
+                    <option value="" disabled selected style="color:#4B5563;">Select your occasion</option>
+                    <option>Interview</option>
+                    <option>Board Meeting</option>
+                    <option>Wedding</option>
+                    <option>Networking Event</option>
+                    <option>Other</option>
+                </select>
+                <textarea rows="4" placeholder="Tell us about your moment..."></textarea>
+                <button class="contact-submit">Request Consultation</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-logo">Fifth Button</div>
+        <p class="footer-copy">© 2024 Fifth Button. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="#">Privacy</a>
+            <a href="#">Terms</a>
+            <a href="#">Instagram</a>
+            <a href="#">LinkedIn</a>
+        </div>
+    </footer>
+
+    <script>
+        const answers = [null, null, null];
+
+        const profiles = {
+            "Interview-Confidence-Student": { title: "The Rising Force", desc: "You're not yet where you're going — but you walk in like you already are. This is the profile of early authority.", collection: "The Interview", silhouette: "Slim Peak Lapel", colour: "Charcoal Slate", occasion: "First Interview" },
+            "Interview-Confidence-Professional": { title: "The Commanding Professional", desc: "You've earned your seat. Now it's time to claim it. Sharp, decisive, unforgettable.", collection: "The Interview", silhouette: "Tailored Single-Breasted", colour: "Midnight Navy", occasion: "Career Interview" },
+            "Interview-Authority-Executive": { title: "The Power Presence", desc: "You don't walk into rooms. Rooms rearrange themselves around you.", collection: "The Boardroom", silhouette: "Double-Breasted Power Suit", colour: "Jet Black", occasion: "Executive Review" },
+            "Board Meeting-Authority-Executive": { title: "The Executive Apex", desc: "The highest tier of presence. When you speak, the room leans in. When you're silent, they wonder.", collection: "The Boardroom", silhouette: "Full-Canvas Double-Breasted", colour: "Oxford Charcoal", occasion: "Board Presentation" },
+            "Wedding-Elegance-Professional": { title: "The Elegant Gentleman", desc: "This is the day she never forgets. You owe it to that moment to look exactly this way.", collection: "The Wedding", silhouette: "Morning Coat or Slim Tuxedo", colour: "Ivory & Midnight", occasion: "Wedding Ceremony" },
+            "Networking Event-Trust-Professional": { title: "The Approachable Authority", desc: "Warm enough to start conversations. Sharp enough to be remembered. This is the profile that builds networks.", collection: "The Evening", silhouette: "Smart Blazer with Trousers", colour: "Deep Navy", occasion: "Networking Event" },
+        };
+
+        function getProfile(a, b, c) {
+            const key = `${a}-${b}-${c}`;
+            if (profiles[key]) return profiles[key];
+            const defaults = {
+                "Interview": { title: "The Interview Presence", desc: "Built for the moment that changes everything. Sharp, confident, impossible to ignore.", collection: "The Interview", silhouette: "Slim Tailored Suit", colour: "Charcoal or Navy", occasion: "Career Interview" },
+                "Wedding": { title: "The Wedding Presence", desc: "The day she remembers forever. You owe it to that moment.", collection: "The Wedding", silhouette: "Elegant Slim Cut", colour: "Ivory & Midnight", occasion: "Wedding Day" },
+                "Board Meeting": { title: "The Boardroom Presence", desc: "Command authority before you say a word.", collection: "The Boardroom", silhouette: "Power Double-Breasted", colour: "Jet Black", occasion: "Board Meeting" },
+                "Networking Event": { title: "The Social Presence", desc: "Every great network starts with a great first impression.", collection: "The Evening", silhouette: "Smart Sharp Blazer", colour: "Deep Navy", occasion: "Networking Event" },
+            };
+            return defaults[a] || { title: "The Fifth Button Presence", desc: "A profile as unique as your ambition. Our consultants will craft the perfect recommendation for you.", collection: "All Collections", silhouette: "Custom Tailored", colour: "Personalised", occasion: "Your Moment" };
+        }
+
+        function selectOption(step, value) {
+            answers[step] = value;
+            const opts = document.querySelectorAll(`#step-${step} .pb-option`);
+            opts.forEach(o => o.classList.remove('selected'));
+            event.target.classList.add('selected');
+
+            setTimeout(() => {
+                if (step < 2) {
+                    document.getElementById(`step-${step}`).classList.remove('active');
+                    document.getElementById(`step-${step + 1}`).classList.add('active');
+                    document.getElementById(`dot-${step + 1}`).classList.add('done');
+                } else {
+                    showResult();
+                }
+            }, 350);
+        }
+
+        function showResult() {
+            document.querySelectorAll('.pb-step').forEach(s => s.style.display = 'none');
+            document.querySelector('.pb-progress').style.display = 'none';
+            const p = getProfile(answers[0], answers[1], answers[2]);
+            document.getElementById('result-title').textContent = p.title;
+            document.getElementById('result-desc').textContent = p.desc;
+            document.getElementById('res-collection').textContent = p.collection;
+            document.getElementById('res-silhouette').textContent = p.silhouette;
+            document.getElementById('res-colour').textContent = p.colour;
+            document.getElementById('res-occasion').textContent = p.occasion;
+            const res = document.getElementById('pb-result');
+            res.classList.add('show');
+        }
+
+        function resetBuilder() {
+            answers[0] = answers[1] = answers[2] = null;
+            document.querySelectorAll('.pb-step').forEach((s, i) => { s.style.display = ''; s.classList.remove('active'); });
+            document.getElementById('step-0').classList.add('active');
+            document.querySelectorAll('.pb-dot').forEach((d, i) => { if (i > 0) d.classList.remove('done'); });
+            document.querySelector('.pb-progress').style.display = 'flex';
+            document.getElementById('pb-result').classList.remove('show');
+            document.querySelectorAll('.pb-option').forEach(o => o.classList.remove('selected'));
+        }
+    </script>
+</body>
+
+</html>
