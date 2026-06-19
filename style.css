@@ -91,7 +91,7 @@ body {
 .actionLinks.show {
     opacity: 1;
     transform: translateY(0);
-    pointer-events: all;   
+    pointer-events: all;
 }
 
 .actionLinks a {
@@ -129,7 +129,7 @@ body {
     background: linear-gradient(160deg, #0D1B2A 0%, #111827 50%, #0D1B2A 100%);
 }
 
-.hero-tagline p{
+.hero-tagline p {
     text-transform: uppercase;
     color: var(--accent-color);
     font-size: 0.65rem;
@@ -196,7 +196,7 @@ body {
     letter-spacing: 0.2rem;
     text-transform: uppercase;
 
-    padding: 1rem 2.5rem;    
+    padding: 1rem 2.5rem;
     transition: all 0.3s;
     cursor: pointer;
 }
@@ -214,42 +214,100 @@ body {
 }
 
 /* 
--------------------
-    Our Belief 
--------------------
+------------------------
+    Section Commons
+------------------------
 */
 
-/* .our-belief {
+section {
+    padding: 7rem 2rem;
+}
 
-} */
-
-.ob-head p {
+.section-label {
+    font-size: 0.6rem;
     letter-spacing: 0.35em;
     text-transform: uppercase;
-    font-size: 0.85rem;
-    color: var(--para-color);
-    line-height: 2;
+    color: #B8975A;
+    margin-bottom: 1rem;
 }
 
-.ob-head h2 {
+.section-title {
     font-family: var(--head-font);
     font-size: clamp(2rem, 4vw, 3.5rem);
+    font-weight: 300;
 }
 
-.ob-head h2 span {
+.section-title span {
+    color: var(--accent-color);
     font-style: italic;
 }
 
-.ob-divider {
+.divider {
     width: 60px;
     height: 1px;
     background-color: var(--accent-color);
     margin: 2rem 0;
 }
 
-.ob-desc p{
+/* 
+-------------------
+    Our Belief 
+-------------------
+*/
+
+.our-belief {
+    background-color: #111827;
+}
+
+.our-belief > p {
+    font-size: 0.85rem;
+    color: var(--para-color);
+    line-height: 2;
+}
+
+.ob-desc p {
     color: var(--para-color);
     font-size: 0.85rem;
     line-height: 2;
     margin-top: 1.5rem;
-} 
+}
+
+.ob-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5em;
+    margin: 4rem 0;
+}
+
+.stat-item h1 {
+    font-family: var(--head-font);
+    color: var(--accent-color);
+    font-size: 3em;
+    font-weight: 300;
+}
+
+.stat-item p {
+    color: var(--secondary-text);
+    text-transform: uppercase;
+    font-size: 0.65rem;
+    letter-spacing: 0.2rem;
+}
+
+/* Review */
+
+blockquote {
+    border-left: 2px solid var(--accent-color);
+    padding-left: 1.5em;
+    font-family: var(--head-font);
+    font-size: 1.7rem;
+    font-style: italic;
+    color: #D1C9BF;
+    line-height: 1.5;
+}
+
+.ob-review p{
+    margin-top: 2.5em;
+    font-size: 0.8em;
+    text-transform: uppercase;
+    color: var(--accent-color);
+}
