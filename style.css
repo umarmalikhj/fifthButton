@@ -293,13 +293,17 @@ section {
     letter-spacing: 0.2rem;
 }
 
-/* Review */
+/* 
+---------------
+    Review 
+---------------
+*/
 
 blockquote {
     border-left: 2px solid var(--accent-color);
-    padding-left: 1.5em;
+    padding-left: 1em;
     font-family: var(--head-font);
-    font-size: 1.7rem;
+    font-size: clamp(1.4rem, 1.2rem + 1vw, 1.7rem);
     font-weight: 100;
     font-style: italic;
     color: #D1C9BF;
@@ -316,7 +320,7 @@ blockquote {
 .collection-cards {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 1.5px;
+    gap: 1px;
     background-color: var(--accent-color);
     margin-top: 2rem;
 }
@@ -329,7 +333,7 @@ blockquote {
 
 .col-item {
     background: #0D1B2A;
-    padding: 1.5rem 1rem 2.5rem 1rem;
+    padding: 1.5rem 1.25rem 5rem 1.25rem;
     cursor: pointer;
     transition: background 0.4s;
     position: relative;
@@ -358,13 +362,13 @@ blockquote {
 .card-name {
     font-family: var(--head-font);
     font-size: 1.25rem;
-    padding: 1rem 0;
+    padding: 1rem 0 0.5rem 0;
 }
 
 .card-desc {
     color: var(--secondary-text);
     text-transform: uppercase;
-    font-size: 0.75rem;
+    font-size: 0.5rem;
     letter-spacing: 0.1rem;
     line-height: 1.3rem;
 }
@@ -374,6 +378,6 @@ blockquote {
     font-size: 0.75rem;
     letter-spacing: 0.1rem;
     position: absolute;
-    bottom: 1rem;
-    left: 1rem;
+    bottom: 1.25rem;
+    left: 1.25rem;
 }
