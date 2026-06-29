@@ -381,3 +381,82 @@ blockquote {
     bottom: 1.25rem;
     left: 1.25rem;
 }
+
+/* 
+-------------------------
+    Presense Builder 
+-------------------------
+*/
+
+.presence {
+    text-align: center;
+    background-color: #111827;
+}
+
+.section-para {
+    font-family: var(--body-font);
+    text-transform: uppercase;
+    color: var(--secondary-text);
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+}
+
+.presence-questions {
+    padding: 3rem 0;
+}
+
+.pq-h1 {
+    font-family: var(--head-font);
+    font-style: italic;
+    font-size: 1.5rem;
+    font-weight: 100;
+    padding-bottom: 2rem;
+}
+
+.presence-questions button {
+    font-family: var(--body-font);
+    text-transform: uppercase;
+    background: none;
+    color: var(--mid-text);
+    border: 1px solid var(--secondary-text);
+    padding: 0.75rem 2rem;
+    margin: 0.5rem 0.25rem;
+}
+
+.stories {
+    display: grid;
+    grid-template-columns: 1fr;
+    background-color: rgba(184, 151, 90, 0.15);
+    gap: 1px;
+    margin-top: 3rem;
+}
+
+.stories div {
+    padding: 2.5rem;
+    background-color: var(--background-color);
+    font-family: var(--body-font);
+}
+
+.story {
+    font-family: var(--head-font);
+    line-height: 2rem;
+    font-size: 1.5rem;
+    font-weight: 100;
+    font-style: italic;
+    color: var(--mid-text);
+}
+
+.name {
+    text-transform: uppercase;
+    color: var(--accent-color);
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    padding: 1.5rem 0 0.5rem 0;
+}
+
+.title {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: var(--para-color);
+    opacity: 0.5;
+}
